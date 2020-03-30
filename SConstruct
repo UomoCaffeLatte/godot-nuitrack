@@ -1,22 +1,24 @@
 #!python
 import os, subprocess
 
-# Local dependency paths
+# Local dependency paths, adapt them to your setup
 godot_headers_path = "godot-cpp/godot_headers"
 cpp_bindings_path = "godot-cpp/"
 cpp_bindings_library_path = "godot-cpp/bin/godot-cpp"
-nuitracksdk_path = "nuitrack_sdk/Nuitrack/"
-nuitrack_core_lib = 'libnuitrack.so'
-nuitrack_middleware_lib = 'libmiddleware.so'
+nuitracksdk_path = "libs/nuitrack-sdk/Nuitrack"
+nuitrack_core_lib = "libnuitrack.so"
+nuitrack_middleware_lib = "libmiddleware.so"
 cpp_library = "godot-cpp"
 
+# only support 64 bits linux at this time
 target = ARGUMENTS.get("target", "debug")
 platform = ARGUMENTS.get("platform", "linux")
-bits = ARGUMENTS.get("bits", 64)
+bits = ARGUMENTS.get("bits", "64")
+
 
 # some paths we'll be completing
 nuitracksdk_lib = nuitracksdk_path
-final_lib_path = "demo/addons/"
+final_lib_path = "res/addons/"
 target_name = 'libgdnuitrack'
 
 env = Environment()
@@ -31,7 +33,7 @@ if platform == "linux":
     if ARGUMENTS.get("use_llvm", "no") == "yes":
         env["CXX"] = "clang++"
 
-    env.Append(CCFLAGS=['-fPIC', '-g', '-std=c++14', '-Wwrite-strings'])
+    env.Append(CCFLAGS=['-fPIC', '-g3', '-std=c++17'])
     env.Append(LINKFLAGS=["-Wl,-R,'$$ORIGIN'"])
     cpp_library += '.linux.debug.64.a'
 
@@ -43,11 +45,11 @@ if platform == "linux":
     if bits == '64':
         env.Append(CCFLAGS=['-m64'])
         env.Append(LINKFLAGS=['-m64'])
-        nuitracksdk_lib = nuitracksdk_lib + 'lib/linux64'
+        nuitracksdk_lib = nuitracksdk_lib + '/lib/linux64/'
     elif bits == '32':
         env.Append(CCFLAGS=['-m32'])
         env.Append(LINKFLAGS=['-m32'])
-        nuitracksdk_lib = nuitracksdk_lib + 'lib/linux_arm'
+        nuitracksdk_lib = nuitracksdk_lib + '/lib/linux_arm/'
 
 
 
