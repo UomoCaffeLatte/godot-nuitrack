@@ -1,0 +1,210 @@
+[
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-mdpi-v4_icon_background.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-mdpi-v4/icon_background.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout-v16/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-xxhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/drawable-xxhdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap_icon_background.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap/icon_background.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable_notification_bg_low.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout_notification_template_part_chronometer.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_icon_background.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-xxxhdpi-v4/icon_background.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_icon_background.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-xhdpi-v4/icon_background.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_icon.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-xhdpi-v4/icon.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout_downloading_expansion.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/layout/downloading_expansion.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout_notification_action.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-v21_notification_action_background.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_icon_background.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-xxhdpi-v4/icon_background.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap_icon_foreground.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap/icon_foreground.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout_status_bar_ongoing_event_progress_bar.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/layout/status_bar_ongoing_event_progress_bar.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-mdpi-v4_icon_foreground.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-mdpi-v4/icon_foreground.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-xhdpi-v4_icon_foreground.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-xhdpi-v4/icon_foreground.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_icon_foreground.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-xxxhdpi-v4/icon_foreground.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-mdpi-v4_icon.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-mdpi-v4/icon.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap_icon.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap/icon.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout_notification_action_tombstone.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable_notification_tile_bg.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_icon_foreground.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-xxhdpi-v4/icon_foreground.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-hdpi-v4_icon_background.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-hdpi-v4/icon_background.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-anydpi-v26_icon.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-anydpi-v26/icon.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-mdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-xxhdpi-v4_icon.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-xxhdpi-v4/icon.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4_icon.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-xxxhdpi-v4/icon.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-hdpi-v4_icon_foreground.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-hdpi-v4/icon_foreground.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/mipmap-hdpi-v4_icon.png.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/d6ed2ebd77c9b01cd19041eb12e5e58e/res/mipmap-hdpi-v4/icon.png"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/res/merged/debug/layout-v21_notification_template_icon_group.xml.flat",
+        "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/layout-v21/notification_template_icon_group.xml"
+    }
+]

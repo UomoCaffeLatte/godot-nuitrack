@@ -1,83 +1,82 @@
 #!python
-import os, subprocess
+import os
+import sys
+import subprocess
 
 # Local dependency paths, adapt them to your setup
-godot_headers_path = "godot-cpp/godot_headers"
-cpp_bindings_path = "godot-cpp/"
-cpp_bindings_library_path = "godot-cpp/bin/godot-cpp"
-nuitracksdk_path = "libs/nuitrack-sdk/Nuitrack"
-nuitrack_core_lib = "libnuitrack.so"
-nuitrack_middleware_lib = "libmiddleware.so"
-cpp_library = "godot-cpp"
+godot_cpp_headers_path = "godot-cpp/godot_headers"
+godot_cpp_bindings_path = "godot-cpp/"
+godto_cpp_lib = "libgodot-cpp.android.debug.armv7.a"
 
-# only support 64 bits linux at this time
-target = ARGUMENTS.get("target", "debug")
-platform = ARGUMENTS.get("platform", "linux")
-bits = ARGUMENTS.get("bits", "64")
+nuitrack_sdk_path = "libs/nuitrack-sdk/Nuitrack"
+nuitrack_sdk_core_lib = "libnuitrack.so"
+nuitrack_sdk_middleware_lib = "libmiddleware.so"
+nuitrack_sdk_lib_path = nuitrack_sdk_path + "/lib/android/"
 
-
-# some paths we'll be completing
-nuitracksdk_lib = nuitracksdk_path
+android_ndk_path = "libs/android-ndk/"
 final_lib_path = "res/addons/"
-target_name = 'libgdnuitrack'
 
-env = Environment()
-
-def add_sources(sources, directory):
+def add_sources(sources, directory, extension):
     for file in os.listdir(directory):
-        if file.endswith('.cpp'):
+        if file.endswith('.' + extension):
             sources.append(directory + '/' + file)
 
-if platform == "linux":
+env = Environment(ENV = os.environ)
+    
+# support only android armv7
+# setup toolchain
+api_level = "18"
+toolchain = android_ndk_path + "/toolchains/llvm/prebuilt/linux-x86_64"
 
-    if ARGUMENTS.get("use_llvm", "no") == "yes":
-        env["CXX"] = "clang++"
+env.PrependENVPath('PATH', toolchain + "/bin") # This does nothing half of the time, but we'll put it here anyways
 
-    env.Append(CCFLAGS=['-fPIC', '-g3', '-std=c++17'])
-    env.Append(LINKFLAGS=["-Wl,-R,'$$ORIGIN'"])
-    cpp_library += '.linux.debug.64.a'
+arch = "armv7"
+arch_march = "armv7-a"
+arch_target = "armv7a-linux-androideabi"
+arch_tool_path = "arm-linux-androideabi"
+arch_compiler_path = "armv7a-linux-androideabi"
+arch_ccflags = "-mfpu=neon"
 
-    if target == 'debug':
-        env.Append(CCFLAGS=['-Og'])
-    elif target == 'release':
-        env.Append(CCFLAGS=['-O3'])
+## setup tools
+env['CXX'] = toolchain + "/bin/armv7a-linux-androideabi16-clang++" #c++
 
-    if bits == '64':
-        env.Append(CCFLAGS=['-m64'])
-        env.Append(LINKFLAGS=['-m64'])
-        nuitracksdk_lib = nuitracksdk_lib + '/lib/linux64/'
-    elif bits == '32':
-        env.Append(CCFLAGS=['-m32'])
-        env.Append(LINKFLAGS=['-m32'])
-        nuitracksdk_lib = nuitracksdk_lib + '/lib/linux_arm/'
+env.Append(CCFLAGS=[
+    #'--target=' + arch_target + api_level,
+    '-march=' +arch_march,
+    '-fPIC'
+])
+env.Append(CCFLAGS=arch_ccflags)
 
-
+#env.Append(LINKFLAGS=["-Wl,-R,'$$ORIGIN'"])
 
 env.Append(CPPPATH = [
     '.',
     'src/',
-    godot_headers_path,
-    cpp_bindings_path + 'include/',
-    cpp_bindings_path + 'include/core/',
-    cpp_bindings_path + 'include/gen/',
-    nuitracksdk_path + '/include/',
-    nuitracksdk_path + '/include/middleware/',
-    nuitracksdk_path + '/include/nuitrack'
+    godot_cpp_headers_path,
+    godot_cpp_bindings_path + 'include/',
+    godot_cpp_bindings_path + 'include/core/',
+    godot_cpp_bindings_path + 'include/gen/',
+    godot_cpp_bindings_path + 'godot_headers/',
+    godot_cpp_bindings_path + 'godot_headers/android/',
+    nuitrack_sdk_path + '/include/',
+    nuitrack_sdk_path + '/include/middleware/',
+    nuitrack_sdk_path + '/include/nuitrack'
 ])
 
 env.Append(LIBPATH=[
-    cpp_bindings_path + 'bin/',
-    nuitracksdk_lib
+    godot_cpp_bindings_path + 'bin/',
+    nuitrack_sdk_lib_path
 ])
 
 env.Append(LIBS=[
-    cpp_library,
-    nuitrack_core_lib,
-    nuitrack_middleware_lib
+    godto_cpp_lib,
+    nuitrack_sdk_core_lib,
+    nuitrack_sdk_middleware_lib
 ])
 
+env.Append(CPPPATH=['src/'])
 sources = []
-add_sources(sources, "src")
+add_sources(sources, "src", 'cpp')
 
-library = env.SharedLibrary(target=final_lib_path + target_name, source=sources)
+library = env.SharedLibrary(target=final_lib_path + "libgdnuitrack", source=sources)
 Default(library)

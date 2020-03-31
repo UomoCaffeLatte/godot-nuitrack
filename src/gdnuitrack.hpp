@@ -2,7 +2,12 @@
 #define GDNUITRACK_HPP
 
 #include <Godot.hpp>
+#include <godot_android.h>
+#include <jni.h>
 #include <Spatial.hpp>
+
+#include <Nuitrack.h>
+
 
 // nuitrack library
 
@@ -16,6 +21,8 @@ namespace godot {
         static void _register_methods();
         void _init(); //initialiser called by Godot
         ~Nuitrack();
+
+        int test();
     };
 }
 

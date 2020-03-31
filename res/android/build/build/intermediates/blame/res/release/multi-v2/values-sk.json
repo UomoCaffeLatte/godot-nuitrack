@@ -1,0 +1,36 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/nikhil/Documents/phd-research/godot/godot-nuitrack/res/android/build/build/intermediates/incremental/mergeReleaseResources/merged.dir/values-sk/values-sk.xml",
+            "map": [
+                {
+                    "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/a91d1f95cd05959724579feaf37ac45c/res/values-sk/values-sk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "131",
+                        "endColumns": "100",
+                        "endOffsets": "227"
+                    }
+                },
+                {
+                    "source": "/home/nikhil/.gradle/caches/transforms-2/files-2.1/c0066966b5a60fd4c4a3e7d4dd837236/res/values-sk/values-sk.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "75",
+                        "endOffsets": "126"
+                    }
+                }
+            ]
+        }
+    ]
+}
