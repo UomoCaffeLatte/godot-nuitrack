@@ -1,0 +1,14 @@
+[entry]
+
+Android.armeabi-v7a="res://addons/libgdnuitrack.so"
+
+[dependencies]
+
+Android.armeabi-v7a=[ "res://addons/libmiddleware.so", "res://addons/libnuitrack.so", "res://addons/libOpenNI.so" ]
+
+[general]
+
+singleton=false
+load_once=true
+symbol_prefix="godot_"
+reloadable=true
