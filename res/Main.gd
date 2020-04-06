@@ -5,17 +5,25 @@ extends Spatial
 # var a = 2
 # var b = "text"
 
-var nuitrackdata
+var nuitrack_helper_singleton
+var nuitrack_helper_state
+
+var nuitrack_api
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Engine.has_singleton("gdNuitrack"):
-		var singleton = Engine.get_singleton("gdNuitrack")
-		var stringreturn = singleton.myFunction("World")
-		$Label.text = "Data: " + stringreturn
-		nuitrackdata = preload("res://addons/gNuitrack.gdns").new()
-		$Label.text = "Data: YEEE" 
-		$Label.text = "Data: " + str(nuitrackdata.test())
+		# Load Nuitrack.apk using custom java plugin
+		nuitrack_helper_singleton = Engine.get_singleton("gdNuitrack")
+		nuitrack_helper_state = nuitrack_helper_singleton.get_nuitrack_state()
+		$nuitrack_apk_loader_state.text = "Nuitrack.apk init state ---" + str(nuitrack_helper_state)
+		
+		# Initalize nuitrack c++ api wrapper
+		if nuitrack_helper_state == true:
+			nuitrack_api = preload("res://addons/gNuitrack.gdns").new()
+	else:
+		# Add failure log
+		pass
 		
 		
 
@@ -25,5 +33,3 @@ func _ready():
 
 func _physics_process(delta):
 	pass
-	#nuitrackdata.update();
-	#$Label.text = "Num of Skeletons:  " + str(nuitrackdata.num_skeleton)

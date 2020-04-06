@@ -31,10 +31,6 @@
 package com.godot.game;
 
 import org.godotengine.godot.Godot;
-import android.content.Context;
-import com.tdv.nuitrack.sdk.Nuitrack;
-import android.os.Bundle;
-import android.util.Log;
 
 /**
  * Template activity for Godot Android custom builds.
@@ -42,19 +38,4 @@ import android.util.Log;
  */
 public class GodotApp extends Godot {
 
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState)
-    {
-        super.onCreate(savedInstanceState);
-
-        Nuitrack.init(this, new Nuitrack.NuitrackCallback() {
-		public void onInitSuccess(Context context) {
-			Log.d("Nuitrack","Sucesss ---------------------------------------------------------------------");
-		}
-		public void onInitFailure(int errorId) {
-			Log.d("NUITRACK","Failure ---------------------------------------------------------------------");
-		}
-	});
-    }
 }

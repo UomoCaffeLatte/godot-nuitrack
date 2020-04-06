@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.content.Context;
 import com.godot.game.R;
 import android.os.Bundle;
-import android.os.Looper;
 import com.tdv.nuitrack.sdk.Nuitrack;
 import javax.microedition.khronos.opengles.GL10;
 import android.util.Log;
@@ -16,30 +15,11 @@ public class gdNuitrack extends Godot.SingletonBase {
     private Godot activity = null;
     private int instanceId = 0;
 
-    public String myFunction(String p_str) {
+    static boolean nuitrack_helper_state = false;
 
-        // activity.runOnUiThread(new Runnable()
-		// {
-        //     @Override
-        //     public void run() {
-        //         Nuitrack.init(appContext, new Nuitrack.NuitrackCallback() {
-        //             public void onInitSuccess(Context context) {
-        //                 Log.d("Nuitrack","Sucesss ---------------------------------------------------------------------");
-        //             }
-        //             public void onInitFailure(int errorId) {
-        //                 Log.d("NUITRACK","Failure ---------------------------------------------------------------------");
-        //             }
-        //         });
-             
-        //     }
-        // });
-
-        return  "hello" + p_str;
-    }
-
-    public void getInstanceId(int pInstanceId) {
-        // You will need to call this method from Godot and pass in the get_instance_id().
-        instanceId = pInstanceId;
+    // getter for nuitrack state (WARNING: THIS IS NOT THREAD SAFE, ONLY ACCESS AFTER CLASS HAS INITIALISED)
+    public boolean get_nuitrack_state() {
+        return  nuitrack_helper_state;
     }
 
     static public Godot.SingletonBase initialize(Activity p_activity) {
@@ -48,32 +28,35 @@ public class gdNuitrack extends Godot.SingletonBase {
 
     public gdNuitrack(Activity p_activity) {
         // Register class name and functions to bind.
-        registerClass("gdNuitrack", new String[]
-            {
-                "myFunction",
-                "getInstanceId"
+        registerClass("gdNuitrack", new String[] {
+            "get_nuitrack_state"
             });
+
         this.appActivity = p_activity;
         this.appContext = appActivity.getApplicationContext();
+
         // You might want to try initializing your singleton here, but android
         // threads are weird and this runs in another thread, so to interact with Godot you usually have to do.
         this.activity = (Godot)p_activity;
-        // this.activity.runOnUiThread(new Runnable() {
-        //     public void run() {
-        //         Nuitrack.init(appContext, new Nuitrack.NuitrackCallback() {
-        //             public void onInitSuccess(Context context) {
-        //                 Log.d("Nuitrack","Sucesss ---------------------------------------------------------------------");
-        //             }
-        //             public void onInitFailure(int errorId) {
-        //                 Log.d("NUITRACK","Failure ---------------------------------------------------------------------");
-        //             }
-        //         });
-        //     }
-        // });
+
+        // Initialize Nuitrack.apk
+        this.activity.runOnUiThread(new Runnable() {
+            public void run() {
+                Nuitrack.init(appContext, new Nuitrack.NuitrackCallback() {
+                    public void onInitSuccess(Context context) {
+                        Log.d("NUITRACK-HELPER","Sucesss ---------------------------------------------------------------------");
+                        nuitrack_helper_state = true;
+                    }
+                    public void onInitFailure(int errorId) {
+                        Log.d("NUITRACK-HELPER","Failure ---------------------------------------------------------------------");
+                        nuitrack_helper_state = false;
+                    }
+                });
+            }
+        });
     }
 
     // Forwarded callbacks you can reimplement, as SDKs often need them.
-
     protected void onMainActivityResult(int requestCode, int resultCode, Intent data) {}
     protected void onMainRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {}
 
