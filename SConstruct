@@ -6,7 +6,7 @@ import subprocess
 # Local dependency paths, adapt them to your setup
 godot_cpp_headers_path = "godot-cpp/godot_headers"
 godot_cpp_bindings_path = "godot-cpp/"
-godto_cpp_lib = "libgodot-cpp.android.debug.armv7.a"
+godto_cpp_lib = "libgodot-cpp.android.release.armv7.a"
 
 nuitrack_sdk_path = "libs/nuitrack-sdk/Nuitrack"
 nuitrack_sdk_core_lib = "libnuitrack.so"
@@ -39,12 +39,14 @@ arch_compiler_path = "armv7a-linux-androideabi"
 arch_ccflags = "-mfpu=neon"
 
 ## setup tools
-env['CXX'] = toolchain + "/bin/armv7a-linux-androideabi16-clang++" #c++
+env['CXX'] = toolchain + "/bin/armv7a-linux-androideabi18-clang++" #c++
 
 env.Append(CCFLAGS=[
-    #'--target=' + arch_target + api_level,
+    '--target=' + arch_target + api_level,
     '-march=' +arch_march,
-    '-fPIC'
+    '-fPIC',
+    '-g',
+    '-std=c++14'
 ])
 env.Append(CCFLAGS=arch_ccflags)
 
@@ -61,17 +63,17 @@ env.Append(CPPPATH = [
     godot_cpp_bindings_path + 'godot_headers/android/',
     nuitrack_sdk_path + '/include/',
     nuitrack_sdk_path + '/include/middleware/',
-    nuitrack_sdk_path + '/include/nuitrack'
+    nuitrack_sdk_path + '/include/nuitrack',
 ])
 
 env.Append(LIBPATH=[
-    godot_cpp_bindings_path + 'bin/',
+    godot_cpp_bindings_path + 'bin/' ,
     nuitrack_sdk_lib_path
 ])
 
 env.Append(LIBS=[
-    godto_cpp_lib,
-    nuitrack_sdk_core_lib,
+    godto_cpp_lib ,
+    nuitrack_sdk_core_lib ,
     nuitrack_sdk_middleware_lib,
     nuitrack_sdk_openi_lib
 ])

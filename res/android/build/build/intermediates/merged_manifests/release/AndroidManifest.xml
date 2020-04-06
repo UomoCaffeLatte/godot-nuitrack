@@ -23,13 +23,25 @@
         android:glEsVersion="0x00020000"
         android:required="true" />
 
+    <!-- Custom user permissions XML added by add-ons. It's recommended to add them from the export preset, though. -->
+    <!-- CHUNK_USER_PERMISSIONS_BEGIN -->
+    <uses-permission android:name="android.permission.NFC" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+
+    <uses-feature android:name="android.hardware.usb.host" />
+
     <instrumentation
         android:name=".GodotInstrumentation"
         android:icon="@mipmap/icon"
         android:label="@string/godot_project_name_string"
-        android:targetPackage="org.godotengine.godot" /> <!-- Custom user permissions XML added by add-ons. It's recommended to add them from the export preset, though. -->
-    <!-- CHUNK_USER_PERMISSIONS_BEGIN -->
-    <!-- CHUNK_USER_PERMISSIONS_END -->
+        android:targetPackage="org.godotengine.godot" /> <!-- CHUNK_USER_PERMISSIONS_END -->
     <!-- Any tag in this line after android:icon will be erased when doing custom builds. -->
     <!-- If you want to add tags manually, do before it. -->
     <!-- WARNING: This should stay on a single line until the parsing code is improved. See GH-32414. -->

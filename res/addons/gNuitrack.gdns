@@ -3,5 +3,5 @@
 [ext_resource path="res://addons/libgNuitrack.gdnlib" type="GDNativeLibrary" id=1]
 
 [resource]
-class_name = "GNUITRACK"
+class_name = "gNuitrack"
 library = ExtResource( 1 )

@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.Context;
 import com.godot.game.R;
 import android.os.Bundle;
+import android.os.Looper;
 import com.tdv.nuitrack.sdk.Nuitrack;
 import javax.microedition.khronos.opengles.GL10;
 import android.util.Log;
@@ -17,22 +18,23 @@ public class gdNuitrack extends Godot.SingletonBase {
 
     public String myFunction(String p_str) {
 
-        activity.runOnUiThread(new Runnable()
-		{
-            @Override
-            public void run() {
-                Nuitrack.init(appContext, new Nuitrack.NuitrackCallback() {
-                    public void onInitSuccess(Context context) {
-                        Log.d("Nuitrack","Sucesss ---------------------------------------------------------------------");
-                    }
-                    public void onInitFailure(int errorId) {
-                        Log.d("NUITRACK","Failure ---------------------------------------------------------------------");
-                    }
-                });
-            }
-        });
+        // activity.runOnUiThread(new Runnable()
+		// {
+        //     @Override
+        //     public void run() {
+        //         Nuitrack.init(appContext, new Nuitrack.NuitrackCallback() {
+        //             public void onInitSuccess(Context context) {
+        //                 Log.d("Nuitrack","Sucesss ---------------------------------------------------------------------");
+        //             }
+        //             public void onInitFailure(int errorId) {
+        //                 Log.d("NUITRACK","Failure ---------------------------------------------------------------------");
+        //             }
+        //         });
+             
+        //     }
+        // });
 
-        return  "hello" +p_str;
+        return  "hello" + p_str;
     }
 
     public void getInstanceId(int pInstanceId) {
@@ -56,7 +58,18 @@ public class gdNuitrack extends Godot.SingletonBase {
         // You might want to try initializing your singleton here, but android
         // threads are weird and this runs in another thread, so to interact with Godot you usually have to do.
         this.activity = (Godot)p_activity;
-
+        // this.activity.runOnUiThread(new Runnable() {
+        //     public void run() {
+        //         Nuitrack.init(appContext, new Nuitrack.NuitrackCallback() {
+        //             public void onInitSuccess(Context context) {
+        //                 Log.d("Nuitrack","Sucesss ---------------------------------------------------------------------");
+        //             }
+        //             public void onInitFailure(int errorId) {
+        //                 Log.d("NUITRACK","Failure ---------------------------------------------------------------------");
+        //             }
+        //         });
+        //     }
+        // });
     }
 
     // Forwarded callbacks you can reimplement, as SDKs often need them.
