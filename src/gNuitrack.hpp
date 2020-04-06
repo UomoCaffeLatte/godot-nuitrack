@@ -15,17 +15,22 @@ namespace godot {
         tdv::nuitrack::SkeletonData::Ptr _skeleton_data_ptr;
 
         int _num_skeletons;
+        static bool _init_state; // this is only definition
+        
 
-        int get_num_skeletons() const;
+        void on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data); //obtain skeleton joint data here
 
         public:
+
+        int get_num_skeletons() const;
+        bool get_init_state() const;
 
         static void _register_methods();
         void _init(); //initialiser called by Godot
         ~gNuitrack();
 
-        int test();
-        void on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data); //obtain skeleton joint data here
+        
+        bool init();
         void update();
     };
 }
