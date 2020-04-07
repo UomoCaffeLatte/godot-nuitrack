@@ -13,6 +13,10 @@ _global_script_class_icons={
 
 }
 
+[android]
+
+modules="org/godotengine/godot/gdNuitrack"
+
 [application]
 
 config/name="Android_Test"
@@ -29,5 +33,6 @@ settings/stdout/print_fps=true
 
 [rendering]
 
+quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 environment/default_environment="res://default_env.tres"

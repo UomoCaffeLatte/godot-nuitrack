@@ -7,8 +7,8 @@ namespace godot {
     bool gNuitrack::_init_state = false; // definining the static variable
 
     void gNuitrack::_register_methods () {
-        register_method("test", &gNuitrack::init);
-        register_method("update", &gNuitrack::update);
+        register_method("init", &gNuitrack::init);
+        //register_method("update", &gNuitrack::update);
 
         register_property<gNuitrack, int>("num_skeleton", nullptr, &gNuitrack::get_num_skeletons, 0);
     }
@@ -29,25 +29,25 @@ namespace godot {
         tdv::nuitrack::Nuitrack::release();
     }
 
-    bool gNuitrack::init(godot::Variant config_values){
+    bool gNuitrack::init(){ //godot::Variant config_values
         bool config_state = false;
         // initalise nuitrack library
         try {
             // initalize nuitrack
             tdv::nuitrack::Nuitrack::init();
-            // set config values
-            config_state = gNuitrack::_set_config_values(config_values);
 
-            if (config_state == true) {
-              _init_state = true;
-                return true;  
-            } else if (config_state == false) {
-                _ERROR_PRINT("Failed to set Nuitrack config values");
-                return false;
-            } else {
-                _ERROR_PRINT("Failed to run Nuitrack set config values");
-                return false;
+            _skeleton_tracker_ptr = tdv::nuitrack::SkeletonTracker::create();
+
+            // link on update method to skeleton tracker
+            _skeleton_tracker_ptr->connectOnUpdate([&](tdv::nuitrack::SkeletonData::Ptr userSkeleton){gNuitrack::on_update_skeleton(userSkeleton);}); // lambda expression, [&] means pass everything by reference
+            
+            try{
+                tdv::nuitrack::Nuitrack::run();
+            } catch (const tdv::nuitrack::Exception& e) {
             }
+
+            _init_state = true;
+            return true; 
             
         } catch (const tdv::nuitrack::Exception& e) {
             _ERROR_PRINT("Failed to initalise Nuitrack");
@@ -55,15 +55,6 @@ namespace godot {
             return false;
         }
 
-        // _skeleton_tracker_ptr = tdv::nuitrack::SkeletonTracker::create();
-
-		// // link on update method to skeleton tracker
-		// _skeleton_tracker_ptr->connectOnUpdate([&](tdv::nuitrack::SkeletonData::Ptr userSkeleton){gNuitrack::on_update_skeleton(userSkeleton);}); // lambda expression, [&] means pass everything by reference
-        
-        // try{
-        //     tdv::nuitrack::Nuitrack::run();
-        // } catch (const tdv::nuitrack::Exception& e) {
-        // }
     }
 
     bool gNuitrack::_set_config_values(godot::Variant config_values){

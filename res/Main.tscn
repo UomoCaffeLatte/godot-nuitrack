@@ -13,6 +13,7 @@ margin_top = 8.0
 margin_right = 225.0
 margin_bottom = 45.0
 custom_colors/font_color = Color( 0.470588, 0, 0, 1 )
+text = "INIT STATE"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -23,6 +24,7 @@ margin_top = 56.0
 margin_right = 225.0
 margin_bottom = 93.0
 custom_colors/font_color = Color( 0.470588, 0, 0, 1 )
+text = "INIT STATe"
 __meta__ = {
 "_edit_use_anchors_": false
 }

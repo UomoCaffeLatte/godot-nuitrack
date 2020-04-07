@@ -6,7 +6,7 @@ import subprocess
 # Local dependency paths, adapt them to your setup
 godot_cpp_headers_path = "godot-cpp/godot_headers"
 godot_cpp_bindings_path = "godot-cpp/"
-godto_cpp_lib = "libgodot-cpp.android.release.armv7.a"
+godto_cpp_lib = "libgodot-cpp.android.debug.armv7.a"
 
 nuitrack_sdk_path = "libs/nuitrack-sdk/Nuitrack"
 nuitrack_sdk_core_lib = "libnuitrack.so"
@@ -74,8 +74,8 @@ env.Append(LIBPATH=[
 env.Append(LIBS=[
     godto_cpp_lib ,
     nuitrack_sdk_core_lib ,
-    nuitrack_sdk_middleware_lib
-    #nuitrack_sdk_openi_lib
+    nuitrack_sdk_middleware_lib,
+    nuitrack_sdk_openi_lib
 ])
 
 env.Append(CPPPATH=['src/'])

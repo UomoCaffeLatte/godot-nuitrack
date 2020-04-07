@@ -32,7 +32,7 @@ namespace godot {
         ~gNuitrack();
 
         
-        bool init(godot::Variant config_values);
+        bool init();
         void update();
     };
 }
