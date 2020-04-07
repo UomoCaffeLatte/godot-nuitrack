@@ -5,10 +5,13 @@
 namespace godot {
 
     bool gNuitrack::_init_state = false; // definining the static variable
+    bool gNuitrack::_run_state = false;
 
     void gNuitrack::_register_methods () {
         register_method("init", &gNuitrack::init);
-        //register_method("update", &gNuitrack::update);
+        register_method("update", &gNuitrack::update);
+        register_method("create", &gNuitrack::create);
+        register_method("run", &gNuitrack::run);
 
         register_property<gNuitrack, int>("num_skeleton", nullptr, &gNuitrack::get_num_skeletons, 0);
     }
@@ -30,7 +33,6 @@ namespace godot {
     }
 
     bool gNuitrack::init(){ //godot::Variant config_values
-        bool config_state = false;
         // initalise nuitrack library
         try {
             // initalize nuitrack
@@ -44,18 +46,6 @@ namespace godot {
             tdv::nuitrack::Nuitrack::setConfigValue("AstraProPerseeDepthProvider.Depth.Height","480");
             tdv::nuitrack::Nuitrack::setConfigValue("Skeletonization.MaxDistance","4000");
 
-            // TESTING CODE
-            _skeleton_tracker_ptr = tdv::nuitrack::SkeletonTracker::create();
-
-            // link on update method to skeleton tracker
-            _skeleton_tracker_ptr->connectOnUpdate([&](tdv::nuitrack::SkeletonData::Ptr userSkeleton){gNuitrack::on_update_skeleton(userSkeleton);}); // lambda expression, [&] means pass everything by reference
-            
-            try{
-                tdv::nuitrack::Nuitrack::run();
-            } catch (const tdv::nuitrack::Exception& e) {
-            }
-            //
-
             _init_state = true;
             return true; 
             
@@ -67,23 +57,41 @@ namespace godot {
 
     }
 
-    bool gNuitrack::_set_config_values(godot::Variant config_values){
-
-        godot::Array config_array = config_values;
-
-        // Loop through config array
-    
-        //tdv::nuitrack::Nuitrack::setConfigValue();
-        return true;
-    }
-
     void gNuitrack::on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data){
         _skeleton_data_ptr = skeleton_data;
         _num_skeletons = skeleton_data->getNumSkeletons();
     };
 
+    void gNuitrack::create(bool skeleton_tracker = false, bool user_tracker = false, bool color_sensor = false){
+        if (skeleton_tracker == true){
+            _skeleton_tracker_ptr = tdv::nuitrack::SkeletonTracker::create();
+            _skeleton_tracker_ptr->connectOnUpdate([&](tdv::nuitrack::SkeletonData::Ptr userSkeleton){gNuitrack::on_update_skeleton(userSkeleton);}); // lambda expression, [&] means pass everything by reference
+        }
+
+        if (user_tracker == true) {
+            _user_tracker_ptr = tdv::nuitrack::UserTracker::create();
+        }
+
+        if (color_sensor == true) {
+            _color_sensor_ptr = tdv::nuitrack::ColorSensor::create();
+        }
+        
+    }
+
     void gNuitrack::update(){
         tdv::nuitrack::Nuitrack::waitUpdate(_skeleton_tracker_ptr);
     }
 
+    bool gNuitrack::run(){
+        
+        try {
+            tdv::nuitrack::Nuitrack::run();
+            _run_state = true;
+            return true;
+
+        } catch (const tdv::nuitrack::Exception& ) {
+            _run_state = false;
+            return false;
+        }
+    }
 }
