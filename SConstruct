@@ -74,8 +74,8 @@ env.Append(LIBPATH=[
 env.Append(LIBS=[
     godto_cpp_lib ,
     nuitrack_sdk_core_lib ,
-    nuitrack_sdk_middleware_lib,
-    nuitrack_sdk_openi_lib
+    nuitrack_sdk_middleware_lib
+    #nuitrack_sdk_openi_lib
 ])
 
 env.Append(CPPPATH=['src/'])

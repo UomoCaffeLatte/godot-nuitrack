@@ -3,7 +3,9 @@
 
 #include <Godot.hpp>
 #include <Spatial.hpp>
-#include <Nuitrack.h>
+#include <Nuitrack.h>	
+#include <vector>
+#include <string>
 
 namespace godot {
     class gNuitrack : public Spatial {
@@ -17,7 +19,7 @@ namespace godot {
         int _num_skeletons;
         static bool _init_state; // this is only definition
         
-
+        bool _set_config_values(godot::Variant config_values);
         void on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data); //obtain skeleton joint data here
 
         public:
@@ -30,7 +32,7 @@ namespace godot {
         ~gNuitrack();
 
         
-        bool init();
+        bool init(godot::Variant config_values);
         void update();
     };
 }

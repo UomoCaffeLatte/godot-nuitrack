@@ -1,5 +1,6 @@
 #include "gNuitrack.hpp"
 
+#define _ERROR_PRINT(msg) godot::Godot::print_warning(msg,__FUNCTION__,__FILE__,__LINE__)
 
 namespace godot {
 
@@ -28,17 +29,28 @@ namespace godot {
         tdv::nuitrack::Nuitrack::release();
     }
 
-    bool gNuitrack::init(){
+    bool gNuitrack::init(godot::Variant config_values){
+        bool config_state = false;
         // initalise nuitrack library
-
         try {
+            // initalize nuitrack
             tdv::nuitrack::Nuitrack::init();
-
             // set config values
+            config_state = gNuitrack::_set_config_values(config_values);
 
-            _init_state = true;
-            return true;
+            if (config_state == true) {
+              _init_state = true;
+                return true;  
+            } else if (config_state == false) {
+                _ERROR_PRINT("Failed to set Nuitrack config values");
+                return false;
+            } else {
+                _ERROR_PRINT("Failed to run Nuitrack set config values");
+                return false;
+            }
+            
         } catch (const tdv::nuitrack::Exception& e) {
+            _ERROR_PRINT("Failed to initalise Nuitrack");
             _init_state = false;
             return false;
         }
@@ -52,6 +64,16 @@ namespace godot {
         //     tdv::nuitrack::Nuitrack::run();
         // } catch (const tdv::nuitrack::Exception& e) {
         // }
+    }
+
+    bool gNuitrack::_set_config_values(godot::Variant config_values){
+
+        godot::Array config_array = config_values;
+
+        // Loop through config array
+    
+        //tdv::nuitrack::Nuitrack::setConfigValue();
+        return true;
     }
 
     void gNuitrack::on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data){

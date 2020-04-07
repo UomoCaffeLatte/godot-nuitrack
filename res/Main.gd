@@ -9,6 +9,7 @@ var nuitrack_helper_singleton
 var nuitrack_helper_state
 
 var nuitrack_api
+var config_array
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -21,6 +22,11 @@ func _ready():
 		# Initalize nuitrack c++ api wrapper
 		if nuitrack_helper_state == true:
 			nuitrack_api = preload("res://addons/gNuitrack.gdns").new()
+			config_array = [
+							["AstraProPerseeDepthProvider.RGB.Width","640"],
+							["AstraProPerseeDepthProvider.RGB.Height","480"],
+							["Skeletonization.MaxDistance","4000"]
+							]
 	else:
 		# Add failure log
 		pass
