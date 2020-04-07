@@ -36,6 +36,15 @@ namespace godot {
             // initalize nuitrack
             tdv::nuitrack::Nuitrack::init();
 
+
+            // REMOVE THIS HARD CODED FEATURE AND ALLOW USERS TO ADD THIS FROM GDSCRIPT 
+            tdv::nuitrack::Nuitrack::setConfigValue("AstraProPerseeDepthProvider.RGB.Width","1280");
+            tdv::nuitrack::Nuitrack::setConfigValue("AstraProPerseeDepthProvider.RGB.Height","720");
+            tdv::nuitrack::Nuitrack::setConfigValue("AstraProPerseeDepthProvider.Depth.Width","640");
+            tdv::nuitrack::Nuitrack::setConfigValue("AstraProPerseeDepthProvider.Depth.Height","480");
+            tdv::nuitrack::Nuitrack::setConfigValue("Skeletonization.MaxDistance","4000");
+
+            // TESTING CODE
             _skeleton_tracker_ptr = tdv::nuitrack::SkeletonTracker::create();
 
             // link on update method to skeleton tracker
@@ -45,6 +54,7 @@ namespace godot {
                 tdv::nuitrack::Nuitrack::run();
             } catch (const tdv::nuitrack::Exception& e) {
             }
+            //
 
             _init_state = true;
             return true; 
