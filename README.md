@@ -5,8 +5,8 @@
 # godot-nuitrack
 Godot C++ and Java module for interacting with the Nuitrack body tracking API. 
 
-**Currently only supporting Android Builds from Linux!** 
-
+**Currently only supporting Android Builds from Linux!** \
+**Latest working branch: gd-cpp-java-module**
 ## Getting Started
 
 ### Prerequisites
