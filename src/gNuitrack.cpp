@@ -59,7 +59,13 @@ namespace godot {
 
     void gNuitrack::on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data){
         _skeleton_data_ptr = skeleton_data;
+
         _num_skeletons = skeleton_data->getNumSkeletons();
+        
+        // wrap skeleton data and get joint position for TORSO
+
+
+
     };
 
     void gNuitrack::create(bool skeleton_tracker = false, bool user_tracker = false, bool color_sensor = false){
