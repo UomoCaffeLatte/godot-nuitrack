@@ -60,7 +60,7 @@ namespace godot {
     void gNuitrack::on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data){
         _skeleton_data_ptr = skeleton_data;
 
-        _num_skeletons = skeleton_data->getNumSkeletons();
+        _num_skeletons = skeleton_data->getNumSkeletons(); //skeleton_data->getNumSkeletons();
         
         // wrap skeleton data and get joint position for TORSO
 
@@ -85,7 +85,8 @@ namespace godot {
     }
 
     void gNuitrack::update(){
-        tdv::nuitrack::Nuitrack::waitUpdate(_skeleton_tracker_ptr);
+        //Godot::print("UPDATE ME");
+        tdv::nuitrack::Nuitrack::update(_skeleton_tracker_ptr);
     }
 
     bool gNuitrack::run(){
