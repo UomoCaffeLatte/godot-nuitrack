@@ -21,8 +21,10 @@ namespace godot {
 
             /// gNuitrackSkeleton ///
             int _num_skeletons;
+            std::vector<tdv::nuitrack::Skeleton> _skeletons;
             tdv::nuitrack::SkeletonData::Ptr _skeleton_data_ptr;
-            void on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data); //obtain skeleton joint data here
+            void _on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data); //obtain skeleton joint data here
+        
 
         public:
             /// gNuitrackGetter ///

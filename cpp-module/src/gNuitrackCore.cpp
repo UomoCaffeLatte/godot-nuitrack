@@ -52,7 +52,7 @@ namespace godot {
     void gNuitrack::create(bool skeleton_tracker = false, bool user_tracker = false, bool color_sensor = false){
         if (skeleton_tracker == true){
             _skeleton_tracker_ptr = tdv::nuitrack::SkeletonTracker::create();
-            _skeleton_tracker_ptr->connectOnUpdate([&](tdv::nuitrack::SkeletonData::Ptr userSkeleton){gNuitrack::on_update_skeleton(userSkeleton);}); // lambda expression, [&] means pass everything by reference
+            _skeleton_tracker_ptr->connectOnUpdate([&](tdv::nuitrack::SkeletonData::Ptr userSkeleton){gNuitrack::_on_update_skeleton(userSkeleton);}); // lambda expression, [&] means pass everything by reference
         }
 
         if (user_tracker == true) {
