@@ -1,4 +1,0 @@
-#Mon Apr 06 21:22:49 BST 2020
-base.0=/home/nikhil/Documents/phd-research/godot/godot_nuitrack/res/android/build/build/intermediates/dex/release/mergeDexRelease/out
-path.0=classes.dex
-renamed.0=classes.dex
