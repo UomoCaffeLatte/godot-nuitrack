@@ -1,4 +1,6 @@
 res/.import/
 *.sconsign.dblite
 .vscode/
-res/android/build/*
+res/android/build/
+.build_version
+.gdignore
