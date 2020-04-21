@@ -19,14 +19,6 @@ namespace godot {
     void gNuitrack::_init(){
     }
 
-    int gNuitrack::get_num_skeletons() const { // const restricts class to only reading of class variables
-        return _num_skeletons;
-    };
-
-    bool gNuitrack::get_init_state() const {
-        return _init_state;
-    }
-
     gNuitrack::~gNuitrack(){
         // clean up code
         tdv::nuitrack::Nuitrack::release();
@@ -57,17 +49,6 @@ namespace godot {
 
     }
 
-    void gNuitrack::on_update_skeleton(tdv::nuitrack::SkeletonData::Ptr skeleton_data){
-        _skeleton_data_ptr = skeleton_data;
-
-        _num_skeletons = skeleton_data->getNumSkeletons(); //skeleton_data->getNumSkeletons();
-        
-        // wrap skeleton data and get joint position for TORSO
-
-
-
-    };
-
     void gNuitrack::create(bool skeleton_tracker = false, bool user_tracker = false, bool color_sensor = false){
         if (skeleton_tracker == true){
             _skeleton_tracker_ptr = tdv::nuitrack::SkeletonTracker::create();
@@ -75,18 +56,17 @@ namespace godot {
         }
 
         if (user_tracker == true) {
-            _user_tracker_ptr = tdv::nuitrack::UserTracker::create();
+            //_user_tracker_ptr = tdv::nuitrack::UserTracker::create();
         }
 
         if (color_sensor == true) {
-            _color_sensor_ptr = tdv::nuitrack::ColorSensor::create();
+            //_color_sensor_ptr = tdv::nuitrack::ColorSensor::create();
         }
         
     }
 
     void gNuitrack::update(){
-        //Godot::print("UPDATE ME");
-        tdv::nuitrack::Nuitrack::update(_skeleton_tracker_ptr);
+        tdv::nuitrack::Nuitrack::update(_skeleton_tracker_ptr); // This call does not wait for data to become available
     }
 
     bool gNuitrack::run(){
