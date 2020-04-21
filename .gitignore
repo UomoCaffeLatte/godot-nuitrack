@@ -4,3 +4,4 @@ res/.import/
 res/android/build/
 .build_version
 .gdignore
+cpp-module/src/*.so
