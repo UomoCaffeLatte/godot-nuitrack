@@ -24,13 +24,15 @@ def add_sources(sources, directory, extension):
 
 env = Environment(ENV = os.environ)
     
-# support only android armv7
+# supports only android armv7 for now
+
 # setup toolchain
 api_level = "18"
 toolchain = android_ndk_path + "/toolchains/llvm/prebuilt/linux-x86_64"
 
 env.PrependENVPath('PATH', toolchain + "/bin") # This does nothing half of the time, but we'll put it here anyways
 
+# setup details for specified arch 
 arch = "armv7"
 arch_march = "armv7-a"
 arch_target = "armv7a-linux-androideabi"
@@ -38,7 +40,7 @@ arch_tool_path = "arm-linux-androideabi"
 arch_compiler_path = "armv7a-linux-androideabi"
 arch_ccflags = "-mfpu=neon"
 
-## setup tools
+# setup tools
 env['CXX'] = toolchain + "/bin/armv7a-linux-androideabi18-clang++" #c++
 
 env.Append(CCFLAGS=[
@@ -50,10 +52,8 @@ env.Append(CCFLAGS=[
 ])
 env.Append(CCFLAGS=arch_ccflags)
 
-#env.Append(LINKFLAGS=["-Wl,-R,'$$ORIGIN'"])
-
 env.Append(CPPPATH = [
-    '.',
+    #'.',
     'src/',
     godot_cpp_headers_path,
     godot_cpp_bindings_path + 'include/',
