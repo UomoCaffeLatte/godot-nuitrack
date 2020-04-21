@@ -1,0 +1,4 @@
+res/.import/
+*.sconsign.dblite
+.vscode/
+res/android/build/*
