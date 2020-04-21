@@ -1,0 +1,68 @@
+package org.godotengine.godot;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.content.Context;
+import com.godot.game.R;
+import android.os.Bundle;
+import com.tdv.nuitrack.sdk.Nuitrack;
+import javax.microedition.khronos.opengles.GL10;
+import android.util.Log;
+
+public class gdNuitrack extends Godot.SingletonBase {
+    protected Activity appActivity;
+    protected Context appContext;
+    private Godot activity = null;
+    private int instanceId = 0;
+
+    static boolean nuitrack_helper_state = false;
+
+    // getter for nuitrack state (WARNING: THIS IS NOT THREAD SAFE, ONLY ACCESS AFTER CLASS HAS INITIALISED)
+    public boolean get_nuitrack_state() {
+        return  nuitrack_helper_state;
+    }
+
+    static public Godot.SingletonBase initialize(Activity p_activity) {
+        return new gdNuitrack(p_activity);
+    }
+
+    public gdNuitrack(Activity p_activity) {
+        // Register class name and functions to bind.
+        registerClass("gdNuitrack", new String[] {
+            "get_nuitrack_state"
+            });
+
+        this.appActivity = p_activity;
+        this.appContext = appActivity.getApplicationContext();
+
+        // You might want to try initializing your singleton here, but android
+        // threads are weird and this runs in another thread, so to interact with Godot you usually have to do.
+        this.activity = (Godot)p_activity;
+
+        // Initialize Nuitrack.apk
+        this.activity.runOnUiThread(new Runnable() {
+            public void run() {
+                Nuitrack.init(appContext, new Nuitrack.NuitrackCallback() {
+                    public void onInitSuccess(Context context) {
+                        Log.d("NUITRACK-HELPER","Sucesss ---------------------------------------------------------------------");
+                        nuitrack_helper_state = true;
+                    }
+                    public void onInitFailure(int errorId) {
+                        Log.d("NUITRACK-HELPER","Failure ---------------------------------------------------------------------");
+                        nuitrack_helper_state = false;
+                    }
+                });
+            }
+        });
+    }
+
+    // Forwarded callbacks you can reimplement, as SDKs often need them.
+    protected void onMainActivityResult(int requestCode, int resultCode, Intent data) {}
+    protected void onMainRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {}
+
+    protected void onMainPause() {}
+    protected void onMainResume() {}
+    protected void onMainDestroy() {}
+    protected void onGLDrawFrame(GL10 gl) {}
+    protected void onGLSurfaceChanged(GL10 gl, int width, int height) {} // Singletons will always miss first 'onGLSurfaceChanged' call.
+}
