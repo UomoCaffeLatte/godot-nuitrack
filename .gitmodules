@@ -1,6 +1,0 @@
-[submodule "godot-cpp"]
-	path = godot-cpp
-	url = https://github.com/GodotNativeTools/godot-cpp.git
-[submodule "libs/nuitrack-sdk"]
-	path = libs/nuitrack-sdk
-	url = https://github.com/3DiVi/nuitrack-sdk.git
